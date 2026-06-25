@@ -1,0 +1,41 @@
+name: Deploy Static Site to Base44
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Validate and Notify Deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout do código-fonte na branch main
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Validação da integridade dos arquivos estáticos essenciais
+      # A Base44 sincroniza nativamente com o GitHub, portanto esta etapa
+      # garante que os arquivos mínimos existam antes da sincronização ocorrer.
+      - name: Validate static site files
+        run: |
+          echo "Validating essential static site files..."
+          if [ ! -f "index.html" ]; then
+            echo "Error: index.html is missing." >&2
+            exit 1
+          fi
+          echo "Found index.html"
+          if [ ! -d "assets" ]; then
+            echo "Warning: assets directory not found. Skipping assets validation."
+          else
+            echo "Found assets directory"
+          fi
+
+      # 3. (Opcional) Notificação/log de sucesso
+      # A sincronização final do conteúdo com a Base44 é gerenciada
+      # automaticamente pela plataforma Base44 após o push no GitHub.
+      - name: Log deployment success
+        run: |
+          echo "Static site files validated successfully."
+          echo "The Base44 platform will now handle the final synchronization from this repository."
