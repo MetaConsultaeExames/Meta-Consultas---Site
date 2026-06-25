@@ -1,0 +1,65 @@
+$flaticon_mycollection-font: "flaticon_mycollection";
+
+@font-face {
+    font-family: $flaticon_mycollection-font;
+    src: url("./flaticon_mycollection.ttf?d21204e698fc87c2fc20fa38896093f4") format("truetype"),
+url("./flaticon_mycollection.woff?d21204e698fc87c2fc20fa38896093f4") format("woff"),
+url("./flaticon_mycollection.woff2?d21204e698fc87c2fc20fa38896093f4") format("woff2"),
+url("./flaticon_mycollection.eot?d21204e698fc87c2fc20fa38896093f4#iefix") format("embedded-opentype"),
+url("./flaticon_mycollection.svg?d21204e698fc87c2fc20fa38896093f4#flaticon_mycollection") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_mycollection !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_mycollection-map: (
+    "utero": "\f101",
+    "cardiologia": "\f102",
+    "little-kid": "\f103",
+    "rim": "\f104",
+    "dermatologia": "\f105",
+    "tireoide": "\f106",
+    "fratura": "\f107",
+    "stomach": "\f108",
+    "maca": "\f109",
+    "stethoscope": "\f10a",
+);
+
+.flaticon-utero:before {
+    content: map-get($flaticon_mycollection-map, "utero");
+}
+.flaticon-cardiologia:before {
+    content: map-get($flaticon_mycollection-map, "cardiologia");
+}
+.flaticon-little-kid:before {
+    content: map-get($flaticon_mycollection-map, "little-kid");
+}
+.flaticon-rim:before {
+    content: map-get($flaticon_mycollection-map, "rim");
+}
+.flaticon-dermatologia:before {
+    content: map-get($flaticon_mycollection-map, "dermatologia");
+}
+.flaticon-tireoide:before {
+    content: map-get($flaticon_mycollection-map, "tireoide");
+}
+.flaticon-fratura:before {
+    content: map-get($flaticon_mycollection-map, "fratura");
+}
+.flaticon-stomach:before {
+    content: map-get($flaticon_mycollection-map, "stomach");
+}
+.flaticon-maca:before {
+    content: map-get($flaticon_mycollection-map, "maca");
+}
+.flaticon-stethoscope:before {
+    content: map-get($flaticon_mycollection-map, "stethoscope");
+}

@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteBase /
+Options +FollowSymLinks
+RewriteCond %{HTTP_HOST} ^metaconsultas.com.br [NC]
+RewriteRule ^(.*)$ http://www.metaconsultas.com.br/$1 [R=301,L] 

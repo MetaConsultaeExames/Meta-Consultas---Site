@@ -1,0 +1,77 @@
+# Arquivos e diretórios de logs
+*.log
+logs/
+log/
+error_log
+access_log
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.cache/
+tmp/
+temp/
+
+# Arquivos de configuração de FTP e credenciais
+.ftpconfig
+.ftpquota
+.netrc
+sftp-config.json
+FileZilla.xml
+*.ftp
+
+# Configurações de ambiente e credenciais
+.env
+.env.local
+.env.*.local
+config/local.php
+config.php
+database.yml
+secrets.yml
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+.Trashes
+.Trash-*
+
+# Arquivos e diretórios de editores/IDEs
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+.classpath
+
+# Dependências e diretórios gerados
+node_modules/
+vendor/
+bower_components/
+package-lock.json
+yarn.lock
+composer.lock
+
+# Arquivos de build e cache
+dist/
+build/
+.cache/
+*.min.js
+*.min.css
+sourcemaps/
+
+# Arquivos específicos de hospedagem (KingHost) - descomente se necessário
+# .htaccess
+# php.ini
+# .user.ini
+
+# Outros arquivos sensíveis
+*.pem
+*.key
+*.cert
+*.crt

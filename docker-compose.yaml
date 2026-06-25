@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+
+  api:
+    container_name: meta-agendamento
+    ports:
+      - "89:80"
+    volumes:
+      - ./api:/var/www/html
+    build:
+      context: ./
+      dockerfile: ./dockerfile
+    env_file:
+      - ./api/.env
+
+networks:
+  default:
+    name: meta-agendamento-api
