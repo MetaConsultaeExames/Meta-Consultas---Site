@@ -1,0 +1,24 @@
+name: Inserir DataLayer em todos os HTMLs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inserir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Executar script
+        run: node inserir-codigos.js
+
+      - name: Commitar alterações
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "Adiciona DataLayer e atualiza GTM ID"
+          git push
