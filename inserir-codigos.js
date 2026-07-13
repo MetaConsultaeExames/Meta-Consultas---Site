@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 function getPageType(filename) {
+  const name = filename.replace('.html', '').toLowerCase();
+
   const map = {
     'index': 'home',
     'quem-somos': 'institucional',
@@ -20,8 +22,6 @@ function getPageType(filename) {
     'rede-parcerias': 'institucional',
   };
 
-  const name = filename.replace('.html', '').toLowerCase();
-  
   const especialidades = [
     'cardiologia', 'ginecologia', 'exames', 'ortopedia', 'pediatria',
     'psicologia', 'psiquiatria', 'dermatologia', 'endocrinologia',
@@ -79,9 +79,8 @@ window.dataLayer.push({
 `;
 
 const arquivos = fs.readdirSync(__dirname);
-
 let modificados = 0;
-let atualizadosGTM = 0;
+let gtmsAtualizados = 0;
 let pulados = 0;
 
 arquivos.forEach(arquivo => {
@@ -89,39 +88,35 @@ arquivos.forEach(arquivo => {
 
   const caminho = path.join(__dirname, arquivo);
   let conteudo = fs.readFileSync(caminho, 'utf8');
+  let alterado = false;
 
-  // 1) Trocar GTM ID antigo pelo novo
+  // 1) Trocar GTM ID
   if (conteudo.includes('GTM-P3SL6STW')) {
     conteudo = conteudo.replace(/GTM-P3SL6STW/g, 'GTM-KS5V7KG');
-    atualizadosGTM++;
+    gtmsAtualizados++;
+    alterado = true;
   }
 
-  // 2) Inserir DataLayer (se ainda não tiver)
+  // 2) Inserir DataLayer (se não tiver)
   if (conteudo.includes('DataLayer e Consent Mode v2 - Meta Consultas')) {
-    console.log(`⚠️  ${arquivo} já tem DataLayer. GTM: ${conteudo.includes('GTM-KS5V7KG') ? 'OK' : 'precisa verificar'}.`);
+    console.log(`⚠️  ${arquivo} já tem DataLayer.`);
     pulados++;
-    // Mesmo pulando DataLayer, salva se GTM foi atualizado
-    if (conteudo.includes('GTM-P3SL6STW') === false && arquivo.includes('GTM-P3SL6STW') === false) {
-      // só salva se mudou algo
-    }
-    fs.writeFileSync(caminho, conteudo, 'utf8');
-    return;
-  }
-
-  if (!conteudo.includes('<head>')) {
+  } else if (!conteudo.includes('<head>')) {
     console.log(`❌  ${arquivo} sem <head>. Pulando.`);
     pulados++;
-    return;
+  } else {
+    conteudo = conteudo.replace('<head>', '<head>' + DATA_LAYER_BLOCK(arquivo));
+    alterado = true;
+    modificados++;
   }
 
-  conteudo = conteudo.replace('<head>', '<head>' + DATA_LAYER_BLOCK(arquivo));
-  fs.writeFileSync(caminho, conteudo, 'utf8');
-  console.log(`✅  ${arquivo} modificado! GTM: atualizado`);
-  modificados++;
+  // Só salva se algo mudou
+  if (alterado) {
+    fs.writeFileSync(caminho, conteudo, 'utf8');
+    console.log(`✅  ${arquivo} salvo!`);
+  }
 });
 
-console.log(`\n========== RESUMO ==========`);
-console.log(`✅ ${modificados} arquivos com DataLayer inserido`);
-console.log(`🔄 ${atualizadosGTM} arquivos com GTM atualizado para GTM-KS5V7KG`);
-console.log(`⚠️  ${pulados} arquivos já tinham DataLayer`);
-console.log(`============================`);
+console.log(`\n✅ ${modificados} com DataLayer inserido`);
+console.log(`🔄 ${gtmsAtualizados} com GTM atualizado`);
+console.log(`⚠️  ${pulados} pulados`);
