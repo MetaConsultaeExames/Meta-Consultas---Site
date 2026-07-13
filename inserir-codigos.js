@@ -1,7 +1,43 @@
 const fs = require('fs');
 const path = require('path');
 
-const BLOCK1 = `
+// Mapa de pageType por nome de arquivo
+function getPageType(filename) {
+  const map = {
+    'index': 'home',
+    'quem-somos': 'institucional',
+    'contato': 'contato',
+    'faq': 'faq',
+    'aviso': 'aviso',
+    'area-do-paciente': 'area_paciente',
+    'agendamento': 'agendamento',
+    'agendamento-escolha': 'agendamento',
+    'agendamento-listar': 'agendamento',
+    'agendamento-listAll': 'agendamento',
+    'agendamento-usuario': 'agendamento',
+    'agendamento_receita': 'agendamento',
+    'agendamento_v1': 'agendamento',
+    'indexAgendamento': 'agendamento',
+    'rede-parcerias': 'institucional',
+  };
+
+  const name = filename.replace('.html', '').toLowerCase();
+  
+  // Especialidades médicas
+  const especialidades = [
+    'cardiologia', 'ginecologia', 'exames', 'ortopedia', 'pediatria',
+    'psicologia', 'psiquiatria', 'dermatologia', 'endocrinologia',
+    'gastroenterologia', 'nutricao', 'obstetricia', 'otorrino',
+    'urologia', 'angiologia', 'fisio', 'clinico-geral',
+    'exames-de-imagem', 'exames-laboratoriais'
+  ];
+
+  if (map[name]) return map[name];
+  if (especialidades.includes(name)) return 'especialidade';
+  return 'pagina_interna';
+}
+
+const BLOCK1 = (filename) => `
 <!-- DataLayer e Consent Mode v2 - Meta Consultas -->
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -18,7 +54,7 @@ gtag('consent', 'default', {
 });
 
 window.dataLayer.push({
-  'pageType': 'landing_page',
+  'pageType': '${getPageType(filename)}',
   'pageTitle': document.title,
   'pageUrl': window.location.href,
   'clinicId': 'meta_consultas_exames',
@@ -51,23 +87,23 @@ let pulados = 0;
 
 arquivos.forEach(arquivo => {
   if (!arquivo.endsWith('.html')) return;
-  
+
   const caminho = path.join(__dirname, arquivo);
   let conteudo = fs.readFileSync(caminho, 'utf8');
-  
+
   if (conteudo.includes('DataLayer e Consent Mode v2 - Meta Consultas')) {
-    console.log(`⚠️  ${arquivo} já tem o DataLayer. Pulando.`);
+    console.log(`⚠️  ${arquivo} já tem. Pulando.`);
     pulados++;
     return;
   }
-  
+
   if (!conteudo.includes('<head>')) {
-    console.log(`❌  ${arquivo} não tem <head>. Pulando.`);
+    console.log(`❌  ${arquivo} sem <head>. Pulando.`);
     pulados++;
     return;
   }
-  
-  conteudo = conteudo.replace('<head>', '<head>' + BLOCK1);
+
+  conteudo = conteudo.replace('<head>', '<head>' + BLOCK1(arquivo));
   fs.writeFileSync(caminho, conteudo, 'utf8');
   console.log(`✅  ${arquivo} modificado!`);
   modificados++;
