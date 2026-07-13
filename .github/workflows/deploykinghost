@@ -1,1 +1,23 @@
+name: Deploy para KingHost
 
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Se precisar de build (ex: npm, composer)
+      # - run: npm install && npm run build
+
+      - name: Deploy via SSH
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.KINGHOST_HOST }}
+          username: ${{ secrets.KINGHOST_USER }}
+          key: ${{ secrets.KINGHOST_SSH_KEY }}
+          source: "."
+          target: "/public_html"
