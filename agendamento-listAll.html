@@ -2,6 +2,47 @@
 <html lang="pt-BR">
 
 <head>
+<!-- DataLayer e Consent Mode v2 - Meta Consultas -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied',
+  'functionality_storage': 'granted',
+  'security_storage': 'granted',
+  'wait_for_update': 500
+});
+
+window.dataLayer.push({
+  'pageType': 'pagina_interna',
+  'pageTitle': document.title,
+  'pageUrl': window.location.href,
+  'clinicId': 'meta_consultas_exames',
+  'clinicName': 'Meta Consultas e Exames',
+  'clinicSegment': 'saude_popular',
+  'clinicCity': 'Rio de Janeiro',
+  'clinicState': 'RJ'
+});
+</script>
+
+<!-- Script de persistência de UTMs -->
+<script>
+(function() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid','ttclid'];
+  var dataToPush = {};
+  utms.forEach(function(p) {
+    var val = urlParams.get(p);
+    if (val) { dataToPush[p] = val; sessionStorage.setItem('meta_'+p, val); }
+  });
+  if (Object.keys(dataToPush).length) window.dataLayer.push(dataToPush);
+})();
+</script>
+
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -57,7 +98,7 @@
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })
-        (window,document,'script','dataLayer','GTM-P3SL6STW');
+        (window,document,'script','dataLayer','GTM-KS5V7KG');
     </script>
     <!-- End Google Tag Manager -->
 
@@ -67,7 +108,7 @@
 
     <!-- Google Tag Manager (noscript) -->
     <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3SL6STW" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS5V7KG" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
