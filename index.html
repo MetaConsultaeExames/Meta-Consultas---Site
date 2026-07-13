@@ -2,59 +2,62 @@
 <html lang="pt-BR">
 
 <head>
-<!-- DataLayer e Consent Mode v2 - Meta Consultas -->
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
+    <!-- DataLayer e Consent Mode v2 - Meta Consultas -->
+    <script>
 
-gtag('consent', 'default', {
-  'ad_storage': 'denied',
-  'ad_user_data': 'denied',
-  'ad_personalization': 'denied',
-  'analytics_storage': 'denied',
-  'functionality_storage': 'granted',
-  'security_storage': 'granted',
-  'wait_for_update': 500
-});
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
 
-window.dataLayer.push({
-  'pageType': 'home',
-  'pageTitle': document.title,
-  'pageUrl': window.location.href,
-  'clinicId': 'meta_consultas_exames',
-  'clinicName': 'Meta Consultas e Exames',
-  'clinicSegment': 'saude_popular',
-  'clinicCity': 'Rio de Janeiro',
-  'clinicState': 'RJ'
-});
-</script>
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied',
+            'functionality_storage': 'granted',
+            'security_storage': 'granted',
+            'wait_for_update': 500
+        });
 
-<!-- Script de persistência de UTMs -->
-<script>
-(function() {
-  var urlParams = new URLSearchParams(window.location.search);
-  var utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid','ttclid'];
-  var dataToPush = {};
-  utms.forEach(function(p) {
-    var val = urlParams.get(p);
-    if (val) { dataToPush[p] = val; sessionStorage.setItem('meta_'+p, val); }
-  });
-  if (Object.keys(dataToPush).length) window.dataLayer.push(dataToPush);
-})();
-</script>
+        window.dataLayer.push({
+            'pageType': 'home',
+            'pageTitle': document.title,
+            'pageUrl': window.location.href,
+            'clinicId': 'meta_consultas_exames',
+            'clinicName': 'Meta Consultas e Exames',
+            'clinicSegment': 'saude_popular',
+            'clinicCity': 'Rio de Janeiro',
+            'clinicState': 'RJ'
+        });
+    </script>
+
+    <!-- Script de persistência de UTMs -->
+    <script>
+        (function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid', 'ttclid'];
+            var dataToPush = {};
+            utms.forEach(function (p) {
+                var val = urlParams.get(p);
+                if (val) { dataToPush[p] = val; sessionStorage.setItem('meta_' + p, val); }
+            });
+            if (Object.keys(dataToPush).length) window.dataLayer.push(dataToPush);
+        })();
+    </script>
 
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <title>Meta Consultas e Exames</title>    
+    <title>Meta Consultas e Exames</title>
     <meta name="Meta Consultas e Exames" content="Estrutura e tecnologia de ponta para a realização de exames" />
-    <meta name="description" content="A Meta Consultas e Exames é uma clínica multidisciplinar que nasceu para prevenir e promover a saúde do paciente, buscando o diagnóstico e tratamento especializado.">
-    <meta name="keywords" content="Angiologia, Cardiologia, Clínica Geral, Dermatologia, Endocrinologia, Gastroenterologia, Ginecologia, Nutrição, Obstetrícia, Ortopedia, Pediatria, Urologia, Exames de Imagem, Exames Laboratoriais, Eletrocardiograma, Endoscopia, Ultrassom, Ecocardiograma, Exame Toxicológico, Beta HCG, Cariótipo Banda G, Sexagem Fetal, Teste de DNA."/>
-    <meta name="author" content="Marketmed"/>
-    <meta name="URL" content="https://www.metaconsultas.com.br"/>
-    <meta name="robots" content="index, follow"/>
-    
+    <meta name="description"
+        content="A Meta Consultas e Exames é uma clínica multidisciplinar que nasceu para prevenir e promover a saúde do paciente, buscando o diagnóstico e tratamento especializado.">
+    <meta name="keywords"
+        content="Angiologia, Cardiologia, Clínica Geral, Dermatologia, Endocrinologia, Gastroenterologia, Ginecologia, Nutrição, Obstetrícia, Ortopedia, Pediatria, Urologia, Exames de Imagem, Exames Laboratoriais, Eletrocardiograma, Endoscopia, Ultrassom, Ecocardiograma, Exame Toxicológico, Beta HCG, Cariótipo Banda G, Sexagem Fetal, Teste de DNA." />
+    <meta name="author" content="Marketmed" />
+    <meta name="URL" content="https://www.metaconsultas.com.br" />
+    <meta name="robots" content="index, follow" />
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.png" />
     <!-- Google Font -->
@@ -86,20 +89,23 @@ window.dataLayer.push({
 
     <!-- Google Tag Manager -->
     <script>
-    (
-        function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })
-    (window,document,'script','dataLayer','GTM-KS5V7KG');
+        (
+            function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })
+            (window, document, 'script', 'dataLayer', 'GTM-KS5V7KG');
     </script>
-    <script> (function(window, document, script) { if (!window.cloudia) { window.cloudia = window.cloudia || {}; c = document.getElementsByTagName('head')[0]; k = document.createElement('script'); k.async = 1; k.src = script; c.appendChild(k); } window.cloudia.clinicId = 7947; })(window, document, 'https://cdn.cloudiabot.com/tracker/tracker.min.js'); </script>
-    
+    <script> (function (window, document, script) { if (!window.cloudia) { window.cloudia = window.cloudia || {}; c = document.getElementsByTagName('head')[0]; k = document.createElement('script'); k.async = 1; k.src = script; c.appendChild(k); } window.cloudia.clinicId = 7947; })(window, document, 'https://cdn.cloudiabot.com/tracker/tracker.min.js'); </script>
+
     <!-- Campanha Whatsapp -->
-     
+
     <script src="js/campanha-whats/whatsapp-redirect.js"></script>
-    
+
     <!-- End Google Tag Manager -->
 
 </head>
@@ -108,14 +114,15 @@ window.dataLayer.push({
 
     <!-- Google Tag Manager (noscript) -->
     <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS5V7KG" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS5V7KG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
 
     <!-- page-wrapper start -->
     <div class="page-wrapper">
-      
+
         <header>
 
             <div class="topbar d-none d-md-block">
@@ -127,17 +134,17 @@ window.dataLayer.push({
                         <div class="col-sm-7 text-right">
 
                             <p class="topbar-info">
-                            
+
                                 <!--<i class="icofont-headphone-alt-1"></i>
                                 <span class="mr-5">Barra: 21 1234-5678</span>-->
-                                <span> 
+                                <span>
 
-                                    <i class="fa fa-whatsapp" style="color:lime"></i> 21 99628-1226 | 
+                                    <i class="fa fa-whatsapp" style="color:lime"></i> 21 99628-1226 |
                                     <!-- <i class="fa fa-whatsapp" style="color:lime"></i> 21 99628-1226 |  -->
-                                    <i class="fa fa-phone"></i> 21 3400-8200 
+                                    <i class="fa fa-phone"></i> 21 3400-8200
 
                                 </span>
-                            
+
                             </p>
 
                         </div>
@@ -147,12 +154,13 @@ window.dataLayer.push({
 
             <nav class="navbar navbar-expand-lg main-nav sticky">
                 <div class="container-xl px-15 px-lg-0">
-                    
+
                     <a class="navbar-brand" href="index.html" title="Meta Consultas e Exames">
                         <img src="img/logo.png" alt="Meta Consultas e Exames">
                     </a>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu"
+                        aria-controls="main_menu" aria-expanded="false" aria-label="Toggle navigation">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -173,24 +181,26 @@ window.dataLayer.push({
                                 <a href="exames.html" title="Exames">Exames</a>
                             </li>
                             <li>
-                                <a href="https://wa.me/5521971563236?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20exame" target="_blank" title="Agendamento">Agendamento</a>
+                                <a href="https://wa.me/5521971563236?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20exame"
+                                    target="_blank" title="Agendamento">Agendamento</a>
                             </li>
                             <!--<li>
                                 <a href="contato.html" title="Contato">Contato</a>
                             </li>-->
                         </ul>
                         <div class="d-block d-md-none">
-                            
+
                             <p class="topbar-info">
-                            
+
                                 <i class="icofont-headphone-alt-1"></i> <span>21 3400-8200</span>
                                 <!-- <i class="icofont-headphone-alt-1"></i> <span>21 99628-1226</span> -->
-                            
+
                             </p>
 
                         </div>
 
-                        <a href="https://www.laudoonline.com.br/metaconsultas/" target="_blank" class="theme-btn" title="Resultados">Resultados</a>
+                        <a href="https://www.laudoonline.com.br/metaconsultas/" target="_blank" class="theme-btn"
+                            title="Resultados">Resultados</a>
 
                     </div>
                 </div>
@@ -206,30 +216,22 @@ window.dataLayer.push({
                         <ul>
                             <!-- Slide 1 -->
                             <li data-transition="fade">
-                               
+
                                 <img src="./img/slider1.jpg" id="slide1" alt="IMG-SLIDE" class="rev-slidebg">
 
                                 <h2 class="tp-caption tp-resizeme txt1 p-l-15 p-r-15"
                                     data-frames='[{"delay":500,"speed":1500,"frame":"0","from":"x:left;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                                    data-x="left" 
-                                    data-y="center" 
-                                    data-width="['1200','992','768','480']"
-                                    data-hoffset="['50','50','50','50']" 
-                                    data-voffset="['-100','-130','-130','-160']"
-                                    data-fontsize="['50', '50', '50', '50']" 
-                                    data-lineheight="['60', '60', '60', '60']"
+                                    data-x="left" data-y="center" data-width="['1200','992','768','480']"
+                                    data-hoffset="['50','50','50','50']" data-voffset="['-100','-130','-130','-160']"
+                                    data-fontsize="['50', '50', '50', '50']" data-lineheight="['60', '60', '60', '60']"
                                     data-height="['auto']"><img src="./img/logo-slider.png" class="logo-slide">
                                 </h2>
 
                                 <p class="tp-caption tp-resizeme slider-sub  p-l-15 p-r-15"
                                     data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"x:right;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                                    data-x="left" 
-                                    data-y="center" 
-                                    data-width="['400','400','400','400']"
-                                    data-hoffset="['50','50','50','26']" 
-                                    data-voffset="['70','70','20','-20']"
-                                    data-fontsize="['35', '35', '25', '25']" 
-                                    data-lineheight="['40', '40', '40', '30']"
+                                    data-x="left" data-y="center" data-width="['400','400','400','400']"
+                                    data-hoffset="['50','50','50','26']" data-voffset="['70','70','20','-20']"
+                                    data-fontsize="['35', '35', '25', '25']" data-lineheight="['40', '40', '40', '30']"
                                     data-height="['auto']">A forma mais completa e acessível<br>de cuidar da sua saúde.
                                 </p>
 
@@ -263,25 +265,18 @@ window.dataLayer.push({
 
                                 <h2 class="tp-caption tp-resizeme txt1 p-l-15 p-r-15"
                                     data-frames='[{"delay":500,"speed":1500,"frame":"0","from":"x:left;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                                    data-x="left" 
-                                    data-y="center" 
-                                    data-width="['1200','992','768','480']"
-                                    data-hoffset="['30','30','30','25']" 
-                                    data-voffset="['-140','-140','-140','-160']"
-                                    data-fontsize="['40', '40', '40', '30']" 
-                                    data-lineheight="['60', '60', '45', '45']"
-                                    data-height="['auto']">Estrutura e tecnologia de ponta<br>para a realização de exames
+                                    data-x="left" data-y="center" data-width="['1200','992','768','480']"
+                                    data-hoffset="['30','30','30','25']" data-voffset="['-140','-140','-140','-160']"
+                                    data-fontsize="['40', '40', '40', '30']" data-lineheight="['60', '60', '45', '45']"
+                                    data-height="['auto']">Estrutura e tecnologia de ponta<br>para a realização de
+                                    exames
                                 </h2>
 
                                 <p class="tp-caption tp-resizeme slider-sub  p-l-15 p-r-15"
                                     data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"x:right;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                                    data-x="left" 
-                                    data-y="center" 
-                                    data-width="['400','400','400','400']"
-                                    data-hoffset="['25','25','25','25']" 
-                                    data-voffset="['10','10','-30','-30']"
-                                    data-fontsize="['40', '40', '40', '26']" 
-                                    data-lineheight="['40', '40', '40', '30']"
+                                    data-x="left" data-y="center" data-width="['400','400','400','400']"
+                                    data-hoffset="['25','25','25','25']" data-voffset="['10','10','-30','-30']"
+                                    data-fontsize="['40', '40', '40', '26']" data-lineheight="['40', '40', '40', '30']"
                                     data-height="['auto']">Pensamos em tudo para garantir<Br>segurança e conforto.
                                 </p>
 
@@ -324,7 +319,8 @@ window.dataLayer.push({
                         </div>
                         <div class="col-xl-4 px-xl-0">
                             <div class="action text-white text-center">
-                                <a href="https://www.laudoonline.com.br/metaconsultas/" target="_blank" title="Resultados">
+                                <a href="https://www.laudoonline.com.br/metaconsultas/" target="_blank"
+                                    title="Resultados">
                                     <h2 class="text-white titleResultado">RESULTADOS</h2>
                                 </a>
                             </div>
@@ -335,7 +331,7 @@ window.dataLayer.push({
 
             <div class="mission-vission fundo">
 
-                <div class="container" >
+                <div class="container">
 
                     <div class="container">
                         <div class="container">
@@ -346,20 +342,18 @@ window.dataLayer.push({
                                         <img src="img/agendamento_online_fx.png" style="width: 100%; margin:10% 0 0 0;">
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-12">
-                                        <a class="btn btn-block btn-primary doctoralia-btn" 
-                                            href="agendamento.html" 
+                                        <a class="btn btn-block btn-primary doctoralia-btn" href="agendamento.html"
                                             target="_blank">
                                             Agendar Consulta
                                         </a>
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-12">
-                                        <a class="zl-facility-url" 
-                                            href="agendamento.html" 
-                                            rel="nofollow" data-zlw-facility="meta-consultas-e-exames" 
-                                            data-zlw-type="certificate" data-zlw-saas-only="true">
+                                        <a class="zl-facility-url" href="agendamento.html" rel="nofollow"
+                                            data-zlw-facility="meta-consultas-e-exames" data-zlw-type="certificate"
+                                            data-zlw-saas-only="true">
                                             Meta Consultas e Exames
                                         </a>
-                                        
+
                                     </div>
                                 </div>
 
@@ -398,7 +392,8 @@ window.dataLayer.push({
                             </section>
                         </div>
                         <div class="col-xl-4 order-xl-2 order-2 text-xl-left text-center">
-                            <img class="quem-somos-img" src="img/meta-conultas.jpg" title="Meta Consultas" alt="Meta Consultas">
+                            <img class="quem-somos-img" src="img/meta-conultas.jpg" title="Meta Consultas"
+                                alt="Meta Consultas">
                         </div>
                     </div>
                     <div class="row mt-xl-5 mt-3 mb-50">
@@ -428,7 +423,7 @@ window.dataLayer.push({
             <div id="especialidades"></div>
 
             <div class="service-section">
-                
+
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="section-header text-center col-lg-8">
@@ -459,7 +454,8 @@ window.dataLayer.push({
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <div class="service-card">
-                                <a href="clinico-geral.html" title="Clínica Geral"><img src="./img/clinica-geral.png"></a>
+                                <a href="clinico-geral.html" title="Clínica Geral"><img
+                                        src="./img/clinica-geral.png"></a>
                                 <h2><a href="clinico-geral.html" title="Clínica Geral">Clínica Geral</a>
                                 </h2>
                             </div>
@@ -474,14 +470,17 @@ window.dataLayer.push({
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <div class="service-card">
-                                <a href="endocrinologia.html" title="Endocrinologia"><img src="./img/endocrinologia.png"></a>
+                                <a href="endocrinologia.html" title="Endocrinologia"><img
+                                        src="./img/endocrinologia.png"></a>
                                 <h2><a href="endocrinologia.html" title="Endocrinologia">Endocrinologia</a></h2>
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
                             <div class="service-card">
-                                <a href="gastroenterologia.html" title="Gastroenterologia"><img src="./img/gastroenterologia.png"></a>
-                                <h2><a href="gastroenterologia.html" title="Gastroenterologia">Gastroenterologia</a></h2>
+                                <a href="gastroenterologia.html" title="Gastroenterologia"><img
+                                        src="./img/gastroenterologia.png"></a>
+                                <h2><a href="gastroenterologia.html" title="Gastroenterologia">Gastroenterologia</a>
+                                </h2>
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6">
@@ -583,7 +582,8 @@ window.dataLayer.push({
                                         pré e pós
                                         procedimentos/exames.
                                     </p>
-                                    <a href="area-do-paciente.html" class="theme-btn" title="Clique aqui"> Clique aqui <i class="icofont-arrow-right"></i> </a>
+                                    <a href="area-do-paciente.html" class="theme-btn" title="Clique aqui"> Clique aqui
+                                        <i class="icofont-arrow-right"></i> </a>
                                 </section>
                             </div>
                         </div>
@@ -780,7 +780,8 @@ window.dataLayer.push({
 
                     <div class="row">
                         <div class="col-md-12 d-flex justify-content-center">
-                            <a href="quem-somos.html" class="theme-btn" title="Quem Somos"> Quem somos <i class="icofont-arrow-right"></i>
+                            <a href="quem-somos.html" class="theme-btn" title="Quem Somos"> Quem somos <i
+                                    class="icofont-arrow-right"></i>
                             </a>
                         </div>
                     </div>
@@ -801,10 +802,11 @@ window.dataLayer.push({
 
                 <div class="container">
                     <div class="row justify-content-xl-between justify-content-center">
-                       
+
                         <div class="col-md-6 text-center mb-30">
 
-                            <img class="border-img" src=" img/exames-de-imagem.jpg" title="Exames de Imagem" alt="Exames de Imagem">
+                            <img class="border-img" src=" img/exames-de-imagem.jpg" title="Exames de Imagem"
+                                alt="Exames de Imagem">
 
 
                             <h2 class="the_title">
@@ -812,16 +814,19 @@ window.dataLayer.push({
                             </h2>
                             <br>
 
-                            <a href="exames-de-imagem.html" class="theme-btn" title="Ver lista">Ver lista <i class="icofont-arrow-right"></i> </a>
+                            <a href="exames-de-imagem.html" class="theme-btn" title="Ver lista">Ver lista <i
+                                    class="icofont-arrow-right"></i> </a>
 
                         </div>
 
                         <div class="col-md-6 order-2 text-center">
 
-                            <img class="border-img" src=" img/exames-laboratoriais.jpg" title="Exames laboratoriais" alt="Exames laboratoriais">
+                            <img class="border-img" src=" img/exames-laboratoriais.jpg" title="Exames laboratoriais"
+                                alt="Exames laboratoriais">
 
                             <h2 class="the_title">
-                                <a href="exames-laboratoriais.html" title="Exames laboratoriais">Exames Laboratoriais</a>
+                                <a href="exames-laboratoriais.html" title="Exames laboratoriais">Exames
+                                    Laboratoriais</a>
                             </h2>
                             <br>
                             <a href="exames-laboratoriais.html" class="theme-btn" title="Ver Lista">Ver lista <i
@@ -886,7 +891,9 @@ window.dataLayer.push({
                                             data-parent="#accordion">
                                             <div class="card-body">
                                                 É possível agendar consultas e procedimentos pessoalmente, através dos
-                                                telefones e também pelo <a href="#">Whatsapp</a>. Nosso horário de atendimento é de segunda a sexta, das 8h às 17h e aos sábados, das 8h às 12h.
+                                                telefones e também pelo <a href="#">Whatsapp</a>. Nosso horário de
+                                                atendimento é de segunda a sexta, das 8h às 17h e aos sábados, das 8h às
+                                                12h.
                                             </div>
                                         </div>
                                     </div>
@@ -913,8 +920,9 @@ window.dataLayer.push({
                                 </div>
 
                                 <br><br>
-                                
-                                <a href="faq.html" class="theme-btn" title="Ver todas"> Ver todas <i class="icofont-arrow-right"></i></a>
+
+                                <a href="faq.html" class="theme-btn" title="Ver todas"> Ver todas <i
+                                        class="icofont-arrow-right"></i></a>
 
                                 <br><br>
 
@@ -932,7 +940,7 @@ window.dataLayer.push({
 
         <!-- Doctoralia -->
         <a href="agendamento.html" target="_blank" title="Agendamento Online">
-            <div class="doctoralia pulsaDelay"> 
+            <div class="doctoralia pulsaDelay">
                 <img src="img/agendamento.png" style="width: 100%;">
                 <p class="doctoralia-text-span">agendamento online</p>
             </div>
@@ -941,7 +949,8 @@ window.dataLayer.push({
 
         <!--whatsapp-->
         <!--<a href="https://wa.me/5521971563236?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20exame " target="_blank" title="Fale Conosco Agora">-->
-        <a href="https://link.cloudiabot.com/whatsapp/cf51982b2d59454a94860558743ef1a2" target="_blank" title="Fale Conosco Agora">
+        <a href="https://link.cloudiabot.com/whatsapp/cf51982b2d59454a94860558743ef1a2" target="_blank"
+            title="Fale Conosco Agora">
             <div class="whatsapp pulsaDelay">
                 <i class="fa fa-whatsapp"></i>
                 <p class="whatsapp-text-span">dúvidas e agendamento</p>
@@ -964,10 +973,12 @@ window.dataLayer.push({
                                         <!-- <br><i class="fa fa-whatsapp" style="color:lime"></i> 21 99628-1226 <br> -->
                                     </span><br>
 
-                                    <span class="larger letter-spacing"><i class="fa fa-phone"></i> 21 3400-8200</span><br><br>
+                                    <span class="larger letter-spacing"><i class="fa fa-phone"></i> 21
+                                        3400-8200</span><br><br>
 
                                     <span class="small">
-                                        <i class="fa fa-envelope"></i> <a href="mailto:atendimento@metaconsultas.com.br" title="Fale Conosco"> atendimento@metaconsultas.com.br</a>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:atendimento@metaconsultas.com.br"
+                                            title="Fale Conosco"> atendimento@metaconsultas.com.br</a>
                                     </span>
 
                                 </p>
@@ -992,7 +1003,7 @@ window.dataLayer.push({
                             <div class="footer-col">
                                 <h2 class="footer-title">Unidade Recreio</h2>
                                 <p>Rua Antônio Baptista Bittencourt, 325 - Loja B<br>CEP 22790-250 <br><br><br>
-                                    Segunda a sexta, das 8h às 17h<br> 
+                                    Segunda a sexta, das 8h às 17h<br>
                                     Sábados, das 8h às 12h
                                 </p>
 
@@ -1002,12 +1013,14 @@ window.dataLayer.push({
                             <div class="footer-col">
                                 <h2 class="footer-title">Redes Sociais</h2>
                                 <div class="footer-social">
-                                    
-                                    <a href="https://www.facebook.com/people/Clínica-Meta/61553003413743/" target="_blank" title="Facebook">
+
+                                    <a href="https://www.facebook.com/people/Clínica-Meta/61553003413743/"
+                                        target="_blank" title="Facebook">
                                         <img src="./img/facebook.png">
                                     </a>
 
-                                    <a href="https://www.instagram.com/metaconsultaseexames/" target="_blank" title="Instagram">
+                                    <a href="https://www.instagram.com/metaconsultaseexames/" target="_blank"
+                                        title="Instagram">
                                         <img src="./img/instagram.png">
                                     </a>
 
@@ -1017,9 +1030,10 @@ window.dataLayer.push({
                     </div>
                 </div>
             </div><!-- /.footer-lg -->
-            
+
             <div class="footer-bottom">
-                <p>Desenvolvido por <a href="https://www.marketmed.com.br" target="_blank" title="MarketMed">MarketMed</a></p>
+                <p>Desenvolvido por <a href="https://www.marketmed.com.br" target="_blank"
+                        title="MarketMed">MarketMed</a></p>
             </div><!-- /.footer-bottom -->
 
         </footer>
@@ -1090,30 +1104,30 @@ window.dataLayer.push({
     <script src="js/slide-custom.js"></script>
 
     <script>
-      
+
 
         if (navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/)) {
 
             $("#slide1").attr("src", "https://www.metaconsultas.com.br/img/slider1-m.jpg");
             $("#slide2").attr("src", "https://www.metaconsultas.com.br/img/slider2-m.jpg");
 
-        
-        }else{   
-           
+
+        } else {
+
             $("#slide1").attr("src", "https://www.metaconsultas.com.br/img/slider1.jpg");
             $("#slide2").attr("src", "https://www.metaconsultas.com.br/img/slider2.jpg");
 
         }
 
-        !function($_x,_s,id) {
-            var js,fjs=$_x.getElementsByTagName(_s)[0];
-            if(!$_x.getElementById(id)) {
+        !function ($_x, _s, id) {
+            var js, fjs = $_x.getElementsByTagName(_s)[0];
+            if (!$_x.getElementById(id)) {
                 js = $_x.createElement(_s);
                 js.id = id;
                 js.src = "//platform.docplanner.com/js/widget.js";
-                fjs.parentNode.insertBefore(js,fjs);
+                fjs.parentNode.insertBefore(js, fjs);
             }
-        }(document,"script","zl-widget-s");
+        }(document, "script", "zl-widget-s");
 
         /*
         function closePopUp() {
